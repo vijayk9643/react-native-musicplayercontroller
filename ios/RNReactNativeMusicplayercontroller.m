@@ -164,15 +164,15 @@ RCT_EXPORT_METHOD(isPlaying: (RCTResponseSenderBlock)callback) {
     
     MPMediaItem * SongItem = [SelectedSong objectAtIndex:0];
     // SongUR = [SongItem valueForProperty: MPMediaItemPropertyAssetURL];
-    NSString *str = [NSString stringWithFormat:@“%@“,[SongItem valueForProperty: MPMediaItemPropertyAssetURL]];
+    NSString *str = [NSString stringWithFormat:@"%@",[SongItem valueForProperty: MPMediaItemPropertyAssetURL]];
     
     for (int i = 0; i < mediaItemCollection.items.count; i++) {
         MPMediaItem *item = mediaItemCollection.items[i];
         [metadata addObject:@{
-                              @“url” : str,
-                                @“title” : item.title,
-                                @“albumTitle” : item.albumTitle,
-                                @“playbackDuration” : @(item.playbackDuration)
+                              @"url" : str,
+                                @"title" : item.title,
+                                @"albumTitle" : item.albumTitle,
+                                @"playbackDuration" : @(item.playbackDuration)
                                 }];
     }
     return metadata;
